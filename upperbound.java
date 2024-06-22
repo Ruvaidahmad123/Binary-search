@@ -2,7 +2,7 @@ static int upperBound(long arr[], int n, long x)
     {
         int low=0;
         int high=n-1;
-        int ans=-1;
+        int ans=n;
         while(low<=high){
             int mid=low+(high-low)/2;
             if(arr[mid]>x){
