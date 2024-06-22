@@ -12,17 +12,18 @@ Explanation: Largest Number less than 5 is 2 (i.e k = 2), whose index is 1(0-bas
 class Solution{
     static int findFloor(long arr[], int n, long x)
     {
-        int low=0;
-        int high=n-1;
-        int ans=-1;
-        while(low<=high){
-            int mid=low+(high-low)/2;
-            if(arr[mid]<=x){
-                ans=Math.max(ans,mid);
-                low++;
-            }
-            else{
-                high--;
+        int low = 0, high = n - 1;
+        int ans = -1;
+
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            // maybe an answer
+            if (arr[mid] <= x) {
+                ans = arr[mid];
+                //look for larger index on the left
+                low = mid + 1;
+            } else {
+                high = mid - 1; // look on the right
             }
         }
         return ans;
