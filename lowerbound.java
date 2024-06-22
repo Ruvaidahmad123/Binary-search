@@ -5,7 +5,7 @@ static int lowerBound(long arr[], int n, long x)
         int ans=-1;
         while(low<=high){
             int mid=low+(high-low)/2;
-            if(arr[mid]<=x){
+            if(arr[mid]>=x){
                 ans=mid;
                 high=mid-1;
             }
